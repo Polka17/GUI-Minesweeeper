@@ -40,8 +40,11 @@ namespace Minesweeper
             this.normalBtn = new System.Windows.Forms.Button();
             this.easyBtn = new System.Windows.Forms.Button();
             this.chooseLabel = new System.Windows.Forms.Label();
+            this.scorePanel = new System.Windows.Forms.Panel();
+            this.scoresRTB = new System.Windows.Forms.RichTextBox();
             this.menu.SuspendLayout();
             this.difficultyPanel.SuspendLayout();
+            this.scorePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // menu
@@ -80,6 +83,7 @@ namespace Minesweeper
             this.scoresItem.Name = "scoresItem";
             this.scoresItem.Size = new System.Drawing.Size(82, 28);
             this.scoresItem.Text = "Scores";
+            this.scoresItem.Click += new System.EventHandler(this.scoresItem_Click);
             // 
             // infoPanel
             // 
@@ -164,12 +168,30 @@ namespace Minesweeper
             this.chooseLabel.TabIndex = 5;
             this.chooseLabel.Text = "Choose difficulty:";
             // 
+            // scorePanel
+            // 
+            this.scorePanel.Controls.Add(this.scoresRTB);
+            this.scorePanel.Location = new System.Drawing.Point(36, 321);
+            this.scorePanel.Name = "scorePanel";
+            this.scorePanel.Size = new System.Drawing.Size(200, 100);
+            this.scorePanel.TabIndex = 3;
+            // 
+            // scoresRTB
+            // 
+            this.scoresRTB.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.scoresRTB.Location = new System.Drawing.Point(27, 23);
+            this.scoresRTB.Name = "scoresRTB";
+            this.scoresRTB.Size = new System.Drawing.Size(100, 96);
+            this.scoresRTB.TabIndex = 0;
+            this.scoresRTB.Text = "";
+            // 
             // levelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOrange;
             this.ClientSize = new System.Drawing.Size(546, 414);
+            this.Controls.Add(this.scorePanel);
             this.Controls.Add(this.difficultyPanel);
             this.Controls.Add(this.infoPanel);
             this.Controls.Add(this.menu);
@@ -184,6 +206,7 @@ namespace Minesweeper
             this.menu.PerformLayout();
             this.difficultyPanel.ResumeLayout(false);
             this.difficultyPanel.PerformLayout();
+            this.scorePanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,5 +224,7 @@ namespace Minesweeper
         private System.Windows.Forms.Button normalBtn;
         private System.Windows.Forms.Button easyBtn;
         private System.Windows.Forms.Label chooseLabel;
+        private System.Windows.Forms.Panel scorePanel;
+        private System.Windows.Forms.RichTextBox scoresRTB;
     }
 }

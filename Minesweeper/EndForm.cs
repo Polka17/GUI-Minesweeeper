@@ -17,6 +17,7 @@ namespace Minesweeper
         private int score;
         private int tries;
         private string message;
+
         public endForm(int scoreC, int triesC, string messageC)
         {
             InitializeComponent();
@@ -27,16 +28,51 @@ namespace Minesweeper
 
         private void endForm_Load(object sender, EventArgs e)
         {
+            scorePanel.Visible = false;
+
             scoreTB.Text = score.ToString();
             triesTB.Text = tries.ToString();
             label1.Text = message;
         }
-        private void homeItem_Click(object sender, EventArgs e)
+        private void homeItem_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            homeForm homeForm = new homeForm();
+            homeForm.FormClosed += HomeForm_FormClosed;
             homeForm.Show();
-        }
 
+            levelForm levelForm = new levelForm();
+            levelForm.FormClosed += LevelForm_FormClosed;
+
+            this.Hide();
+        }
+        private void scoresItem_Click(object sender, EventArgs e)
+        {
+            scorePanel.Visible = true;
+            scorePanel.Dock = DockStyle.Fill;
+
+            scoresRTB.Size = new Size(320, 220);
+            scoresRTB.Margin = new Padding(10);
+
+            using (StreamReader streamReader = new StreamReader("../file.txt"))
+            {
+                if(scoresRTB.Text != "")
+                {
+                    scoresRTB.Clear();
+                }
+                else
+                {
+                    while (!streamReader.EndOfStream)
+                    {
+                        scoresRTB.Text += streamReader.ReadLine();
+                        scoresRTB.Text += Environment.NewLine;
+                    }
+                }
+            }
+        }
+        private void yourScoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            scorePanel.Visible = false;
+        }
         private void saveInfoBtn_Click(object sender, EventArgs e)
         {
             
@@ -45,12 +81,23 @@ namespace Minesweeper
             string newText = $"{usernameTB.Text},{score},{tries},{time}";
 
 
-            using (StreamWriter writer = new StreamWriter("../file.txt"))
+            using (StreamWriter writer = new StreamWriter("../file.txt", true))
             {
                 writer.WriteLine(newText);
             }
             this.Close();
             homeForm.Show();
+        }
+
+        private void HomeForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // close this form if home form is closed
+            Close();
+        }
+        private void LevelForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // close this form if home form is closed
+            Close();
         }
     }
 }

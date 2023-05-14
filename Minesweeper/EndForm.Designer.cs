@@ -40,7 +40,11 @@ namespace Minesweeper
             this.scoreTB = new System.Windows.Forms.TextBox();
             this.triesTB = new System.Windows.Forms.TextBox();
             this.saveInfoBtn = new System.Windows.Forms.Button();
+            this.scorePanel = new System.Windows.Forms.Panel();
+            this.scoresRTB = new System.Windows.Forms.RichTextBox();
+            this.yourScoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
+            this.scorePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // menu
@@ -50,7 +54,8 @@ namespace Minesweeper
             this.menu.ImageScalingSize = new System.Drawing.Size(30, 30);
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeItem,
-            this.scoresItem});
+            this.scoresItem,
+            this.yourScoreToolStripMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(10);
@@ -64,12 +69,14 @@ namespace Minesweeper
             this.homeItem.Name = "homeItem";
             this.homeItem.Size = new System.Drawing.Size(77, 28);
             this.homeItem.Text = "Home";
+            this.homeItem.Click += new System.EventHandler(this.homeItem_Click_1);
             // 
             // scoresItem
             // 
             this.scoresItem.Name = "scoresItem";
             this.scoresItem.Size = new System.Drawing.Size(82, 28);
             this.scoresItem.Text = "Scores";
+            this.scoresItem.Click += new System.EventHandler(this.scoresItem_Click);
             // 
             // label1
             // 
@@ -158,12 +165,37 @@ namespace Minesweeper
             this.saveInfoBtn.UseVisualStyleBackColor = false;
             this.saveInfoBtn.Click += new System.EventHandler(this.saveInfoBtn_Click);
             // 
+            // scorePanel
+            // 
+            this.scorePanel.Controls.Add(this.scoresRTB);
+            this.scorePanel.Location = new System.Drawing.Point(261, 52);
+            this.scorePanel.Name = "scorePanel";
+            this.scorePanel.Size = new System.Drawing.Size(200, 100);
+            this.scorePanel.TabIndex = 11;
+            // 
+            // scoresRTB
+            // 
+            this.scoresRTB.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.scoresRTB.Location = new System.Drawing.Point(19, 21);
+            this.scoresRTB.Name = "scoresRTB";
+            this.scoresRTB.Size = new System.Drawing.Size(100, 96);
+            this.scoresRTB.TabIndex = 0;
+            this.scoresRTB.Text = "";
+            // 
+            // yourScoreToolStripMenuItem
+            // 
+            this.yourScoreToolStripMenuItem.Name = "yourScoreToolStripMenuItem";
+            this.yourScoreToolStripMenuItem.Size = new System.Drawing.Size(118, 28);
+            this.yourScoreToolStripMenuItem.Text = "Your score";
+            this.yourScoreToolStripMenuItem.Click += new System.EventHandler(this.yourScoreToolStripMenuItem_Click);
+            // 
             // endForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOrange;
             this.ClientSize = new System.Drawing.Size(487, 384);
+            this.Controls.Add(this.scorePanel);
             this.Controls.Add(this.saveInfoBtn);
             this.Controls.Add(this.triesTB);
             this.Controls.Add(this.scoreTB);
@@ -179,6 +211,7 @@ namespace Minesweeper
             this.Load += new System.EventHandler(this.endForm_Load);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
+            this.scorePanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,5 +230,8 @@ namespace Minesweeper
         private System.Windows.Forms.TextBox scoreTB;
         private System.Windows.Forms.TextBox triesTB;
         private System.Windows.Forms.Button saveInfoBtn;
+        private System.Windows.Forms.Panel scorePanel;
+        private System.Windows.Forms.RichTextBox scoresRTB;
+        private System.Windows.Forms.ToolStripMenuItem yourScoreToolStripMenuItem;
     }
 }
