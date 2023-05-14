@@ -10,24 +10,25 @@ using System.Windows.Forms;
 
 namespace Minesweeper
 {
-    public partial class GameInterface : UserControl
+    public partial class gameForm : Form
     {
         private int[,] cells;
         private Button[,] buttons;
         private int tries;
         private int score;
 
-        
-        public GameInterface()
+        private int gameSize = 0;
+        private int bombs = 0;
+
+        public gameForm(int size, int bombsC)
         {
             InitializeComponent();
+            gameSize = size;
+            bombs = bombsC;
         }
-        private void GameInterface_Load(object sender, EventArgs e)
+        private void gameForm_Load(object sender, EventArgs e)
         {
-            Difficulty difficulty = new Difficulty();
-            int sizeM = difficulty.GameSize;
-            int bombsM = difficulty.Bombs;
-            Initialise(sizeM, bombsM);
+            Initialise(gameSize, bombs);
 
             for (int i = 0; i < cells.GetLength(0); i++)
             {
@@ -35,14 +36,14 @@ namespace Minesweeper
                 {
                     Button button = new Button();
                     buttons[i, j] = button;
-                    button.BackColor = Color.Red;
+                    button.BackColor = Color.Orange;
                     button.Left = i * 40;
                     button.Top = j * 40;
                     button.Width = 40;
                     button.Height = 40;
                     button.Text = "";
                     button.Font = new Font("Arial", 20);
-                    Controls.Add(button);
+                    panel2.Controls.Add(button);
                     button.Click += ButtonClick; ;
                 }
             }
@@ -51,7 +52,7 @@ namespace Minesweeper
         {
             cells = new int[size, size];
             buttons = new Button[size, size];
-            tries = bombs * 2;
+            tries = bombs;
 
             Random random = new Random();
             while (bombs > 0)
@@ -90,6 +91,15 @@ namespace Minesweeper
             {
                 button.Text = "\U0001F4A3";
                 score += 10;
+                bombs--;
+                scoreTB.Text = score.ToString();
+                bombsTB.Text = bombs.ToString();
+                if (bombs <= 0)
+                {
+                    this.Close();
+                    endForm endForm = new endForm(score, tries, "Game over! You won!!!");
+                    endForm.Show();
+                }
             }
             else
             {
@@ -98,20 +108,24 @@ namespace Minesweeper
                     button.Text = "";
                     Reveal(row, col);
                     tries--;
+                    triesTB.Text = tries.ToString();
                     if (tries <= 0)
                     {
-                        MessageBox.Show("Game Over!!!");
-                        //User Control enabled = false
+                        this.Close();
+                        endForm endForm = new endForm(score, tries, "Game over! You lose!!");
+                        endForm.Show();
                     }
                 }
                 else
                 {
                     button.Text = $"{cells[row, col]}";
                     tries--;
+                    triesTB.Text = tries.ToString();
                     if (tries <= 0)
                     {
-                        MessageBox.Show("Game Over!!!");
-                        //User Control enabled = false
+                        this.Close();
+                        endForm endForm = new endForm(score, tries, "Game over! You lose!!");
+                        endForm.Show();
                     }
                 }
             }
@@ -135,12 +149,13 @@ namespace Minesweeper
                     continue;
                 }
                 buttons[point.X, point.Y].Enabled = false;
-                if (cells[point.X, point.Y] != 0)
+                if (cells[point.X, point.Y] == 0)
                 {
-                    buttons[point.X, point.Y].Text = $"{cells[point.X, point.Y]}";
+                    buttons[point.X, point.Y].BackColor = Color.CornflowerBlue;
                 }
                 if (cells[point.X, point.Y] != 0)
                 {
+                    buttons[point.X, point.Y].Text = $"{cells[point.X, point.Y]}"; 
                     continue;
                 }
                 stack.Push(new Point(point.X - 1, point.Y));
@@ -148,6 +163,10 @@ namespace Minesweeper
                 stack.Push(new Point(point.X, point.Y - 1));
                 stack.Push(new Point(point.X, point.Y + 1));
             }
+        }
+        private void quitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

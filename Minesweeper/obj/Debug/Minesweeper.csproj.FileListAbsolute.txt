@@ -8,6 +8,6 @@ C:\Users\Poli_\source\repos\GUI_Project\Minesweeper\obj\Debug\Minesweeper.exe
 C:\Users\Poli_\source\repos\GUI_Project\Minesweeper\obj\Debug\Minesweeper.pdb
 C:\Users\Poli_\source\repos\GUI_Project\Minesweeper\obj\Debug\Minesweeper.homeForm.resources
 C:\Users\Poli_\source\repos\GUI_Project\Minesweeper\obj\Debug\Minesweeper.levelForm.resources
-C:\Users\Poli_\source\repos\GUI_Project\Minesweeper\obj\Debug\Minesweeper.Difficulty.resources
+C:\Users\Poli_\source\repos\GUI_Project\Minesweeper\obj\Debug\Minesweeper.gameForm.resources
+C:\Users\Poli_\source\repos\GUI_Project\Minesweeper\obj\Debug\Minesweeper.endForm.resources
 C:\Users\Poli_\source\repos\GUI_Project\Minesweeper\obj\Debug\Minesweeper.csproj.AssemblyReference.cache
-C:\Users\Poli_\source\repos\GUI_Project\Minesweeper\obj\Debug\Minesweeper.GameInterface.resources

@@ -46,11 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameInterface.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="EndForm.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GameInterface.Designer.cs">
-      <DependentUpon>GameInterface.cs</DependentUpon>
+    <Compile Include="EndForm.Designer.cs">
+      <DependentUpon>EndForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameForm.Designer.cs">
+      <DependentUpon>GameForm.cs</DependentUpon>
     </Compile>
     <Compile Include="HomeForm.cs">
       <SubType>Form</SubType>
@@ -66,15 +72,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User.cs" />
-    <Compile Include="Difficulty.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Difficulty.Designer.cs">
-      <DependentUpon>Difficulty.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="GameInterface.resx">
-      <DependentUpon>GameInterface.cs</DependentUpon>
+    <EmbeddedResource Include="EndForm.resx">
+      <DependentUpon>EndForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameForm.resx">
+      <DependentUpon>GameForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
@@ -92,9 +94,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Difficulty.resx">
-      <DependentUpon>Difficulty.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
