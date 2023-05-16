@@ -120,4 +120,14 @@
   <metadata name="menu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="infoTB.Text" xml:space="preserve">
+    <value>Minesweeper is an arcade game in which the player has to find all boms in a minefield by revealing squares. The games has 4 levels from EASY to SUPER-TURBO-HARD. By clicking on a square you can either:
+- open a bomb
+- show the number of bombs nearby
+- open a blank square
+
+Play - with the MOUSE
+
+If you find all bombs - you win! But beware you have LIMITED TRIES to do so!</value>
+  </data>
 </root>

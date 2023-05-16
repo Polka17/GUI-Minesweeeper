@@ -32,6 +32,7 @@ namespace Minesweeper
             this.menu = new System.Windows.Forms.MenuStrip();
             this.homeItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scoresItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yourScoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.scoreLabel = new System.Windows.Forms.Label();
             this.triesLabel = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@ namespace Minesweeper
             this.saveInfoBtn = new System.Windows.Forms.Button();
             this.scorePanel = new System.Windows.Forms.Panel();
             this.scoresRTB = new System.Windows.Forms.RichTextBox();
-            this.yourScoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.scorePanel.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +77,13 @@ namespace Minesweeper
             this.scoresItem.Size = new System.Drawing.Size(82, 28);
             this.scoresItem.Text = "Scores";
             this.scoresItem.Click += new System.EventHandler(this.scoresItem_Click);
+            // 
+            // yourScoreToolStripMenuItem
+            // 
+            this.yourScoreToolStripMenuItem.Name = "yourScoreToolStripMenuItem";
+            this.yourScoreToolStripMenuItem.Size = new System.Drawing.Size(118, 28);
+            this.yourScoreToolStripMenuItem.Text = "Your score";
+            this.yourScoreToolStripMenuItem.Click += new System.EventHandler(this.yourScoreToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -176,18 +183,11 @@ namespace Minesweeper
             // scoresRTB
             // 
             this.scoresRTB.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.scoresRTB.Location = new System.Drawing.Point(19, 21);
+            this.scoresRTB.Location = new System.Drawing.Point(28, 21);
             this.scoresRTB.Name = "scoresRTB";
             this.scoresRTB.Size = new System.Drawing.Size(100, 96);
             this.scoresRTB.TabIndex = 0;
             this.scoresRTB.Text = "";
-            // 
-            // yourScoreToolStripMenuItem
-            // 
-            this.yourScoreToolStripMenuItem.Name = "yourScoreToolStripMenuItem";
-            this.yourScoreToolStripMenuItem.Size = new System.Drawing.Size(118, 28);
-            this.yourScoreToolStripMenuItem.Text = "Your score";
-            this.yourScoreToolStripMenuItem.Click += new System.EventHandler(this.yourScoreToolStripMenuItem_Click);
             // 
             // endForm
             // 

@@ -29,12 +29,9 @@ namespace Minesweeper
         private void homeItem_Click(object sender, EventArgs e)
         {
             homeForm homeForm = new homeForm();
-            homeForm.FormClosed += HomeForm_FormClosed;
-            homeForm.Show();
-
-            endForm endForm = new endForm(0, 0, "");
-            endForm.FormClosed += EndForm_FormClosed;
             this.Hide();
+            homeForm.ShowDialog();
+            this.Close();
         }
 
         private void difficultyItem_Click(object sender, EventArgs e)
@@ -50,33 +47,33 @@ namespace Minesweeper
         private void easyBtn_Click(object sender, EventArgs e)
         {
             gameForm gameForm = new gameForm(5,15);
-            gameForm.Show();
-
-            this.Visible = false;
+            this.Hide();
+            gameForm.ShowDialog();
+            this.Close();
         }
 
         private void normalBtn_Click(object sender, EventArgs e)
         {
             gameForm gameForm = new gameForm(8, 32);
-            gameForm.Show();
-
-            this.Visible = false;
+            this.Hide();
+            gameForm.ShowDialog();
+            this.Close();
         }
 
         private void hardBrn_Click(object sender, EventArgs e)
         {
             gameForm gameForm = new gameForm(11, 40);
-            gameForm.Show();
-
-            this.Visible = false;
+            this.Hide();
+            gameForm.ShowDialog();
+            this.Close();
         }
 
         private void ultimateBtn_Click(object sender, EventArgs e)
         {
             gameForm gameForm = new gameForm(15, 110);
-            gameForm.Show();
-
-            this.Visible = false;
+            this.Hide();
+            gameForm.ShowDialog();
+            this.Close();
         }
 
         private void scoresItem_Click(object sender, EventArgs e)
@@ -104,15 +101,12 @@ namespace Minesweeper
             }
         }
 
-        private void HomeForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void infoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // close this form if home form is closed
-            Close();
-        }
-        private void EndForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            // close this form if home form is closed
-            Close();
+            infoPanel.Visible = true;
+
+            difficultyPanel.Visible = false;
+            scorePanel.Visible = false;
         }
     }
 }

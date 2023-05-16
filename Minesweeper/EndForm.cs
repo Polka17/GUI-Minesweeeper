@@ -37,13 +37,9 @@ namespace Minesweeper
         private void homeItem_Click_1(object sender, EventArgs e)
         {
             homeForm homeForm = new homeForm();
-            homeForm.FormClosed += HomeForm_FormClosed;
-            homeForm.Show();
-
-            levelForm levelForm = new levelForm();
-            levelForm.FormClosed += LevelForm_FormClosed;
-
             this.Hide();
+            homeForm.ShowDialog();
+            this.Close();
         }
         private void scoresItem_Click(object sender, EventArgs e)
         {
@@ -85,19 +81,9 @@ namespace Minesweeper
             {
                 writer.WriteLine(newText);
             }
+            this.Hide();
+            homeForm.ShowDialog();
             this.Close();
-            homeForm.Show();
-        }
-
-        private void HomeForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            // close this form if home form is closed
-            Close();
-        }
-        private void LevelForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            // close this form if home form is closed
-            Close();
         }
     }
 }

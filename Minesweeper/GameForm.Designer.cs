@@ -46,7 +46,7 @@ namespace Minesweeper
             this.scoreLabel.AutoSize = true;
             this.scoreLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.scoreLabel.ForeColor = System.Drawing.Color.White;
-            this.scoreLabel.Location = new System.Drawing.Point(11, 9);
+            this.scoreLabel.Location = new System.Drawing.Point(11, 2);
             this.scoreLabel.Name = "scoreLabel";
             this.scoreLabel.Size = new System.Drawing.Size(64, 21);
             this.scoreLabel.TabIndex = 1;
@@ -57,7 +57,7 @@ namespace Minesweeper
             this.triesLabel.AutoSize = true;
             this.triesLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.triesLabel.ForeColor = System.Drawing.Color.White;
-            this.triesLabel.Location = new System.Drawing.Point(13, 71);
+            this.triesLabel.Location = new System.Drawing.Point(13, 64);
             this.triesLabel.Name = "triesLabel";
             this.triesLabel.Size = new System.Drawing.Size(57, 21);
             this.triesLabel.TabIndex = 2;
@@ -67,7 +67,7 @@ namespace Minesweeper
             // 
             this.scoreTB.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.scoreTB.ForeColor = System.Drawing.Color.White;
-            this.scoreTB.Location = new System.Drawing.Point(11, 29);
+            this.scoreTB.Location = new System.Drawing.Point(11, 22);
             this.scoreTB.Name = "scoreTB";
             this.scoreTB.ReadOnly = true;
             this.scoreTB.Size = new System.Drawing.Size(61, 28);
@@ -77,7 +77,7 @@ namespace Minesweeper
             // 
             this.triesTB.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.triesTB.ForeColor = System.Drawing.Color.White;
-            this.triesTB.Location = new System.Drawing.Point(12, 96);
+            this.triesTB.Location = new System.Drawing.Point(12, 89);
             this.triesTB.Name = "triesTB";
             this.triesTB.ReadOnly = true;
             this.triesTB.Size = new System.Drawing.Size(61, 28);
@@ -88,7 +88,7 @@ namespace Minesweeper
             this.quitButton.BackColor = System.Drawing.Color.SeaShell;
             this.quitButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.quitButton.ForeColor = System.Drawing.Color.Orange;
-            this.quitButton.Location = new System.Drawing.Point(5, 208);
+            this.quitButton.Location = new System.Drawing.Point(4, 191);
             this.quitButton.Name = "quitButton";
             this.quitButton.Size = new System.Drawing.Size(77, 55);
             this.quitButton.TabIndex = 5;
@@ -101,7 +101,7 @@ namespace Minesweeper
             this.bombsLabel.AutoSize = true;
             this.bombsLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.bombsLabel.ForeColor = System.Drawing.Color.White;
-            this.bombsLabel.Location = new System.Drawing.Point(6, 140);
+            this.bombsLabel.Location = new System.Drawing.Point(6, 133);
             this.bombsLabel.Name = "bombsLabel";
             this.bombsLabel.Size = new System.Drawing.Size(75, 21);
             this.bombsLabel.TabIndex = 6;
@@ -111,7 +111,7 @@ namespace Minesweeper
             // 
             this.bombsTB.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.bombsTB.ForeColor = System.Drawing.Color.White;
-            this.bombsTB.Location = new System.Drawing.Point(13, 164);
+            this.bombsTB.Location = new System.Drawing.Point(13, 157);
             this.bombsTB.Name = "bombsTB";
             this.bombsTB.ReadOnly = true;
             this.bombsTB.Size = new System.Drawing.Size(61, 28);
@@ -130,9 +130,9 @@ namespace Minesweeper
             this.panel1.Controls.Add(this.triesLabel);
             this.panel1.Controls.Add(this.scoreLabel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(637, 0);
+            this.panel1.Location = new System.Drawing.Point(638, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(85, 512);
+            this.panel1.Size = new System.Drawing.Size(84, 512);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -143,7 +143,7 @@ namespace Minesweeper
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(637, 512);
+            this.panel2.Size = new System.Drawing.Size(638, 512);
             this.panel2.TabIndex = 1;
             // 
             // gameForm

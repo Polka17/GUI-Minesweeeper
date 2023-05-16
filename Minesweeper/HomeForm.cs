@@ -23,14 +23,9 @@ namespace Minesweeper
         private void startButton_Click(object sender, EventArgs e)
         {
             levelForm levelform = new levelForm();
-            levelform.FormClosed += LevelForm_FormClosed;
-            levelform.Show();
             this.Hide();
-        }
-        private void LevelForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            // Close the main form when the other form is closed
-            Close();
+            levelform.ShowDialog();
+            this.Close();
         }
     }
 }

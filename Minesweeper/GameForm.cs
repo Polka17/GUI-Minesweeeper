@@ -96,9 +96,10 @@ namespace Minesweeper
                 bombsTB.Text = bombs.ToString();
                 if (bombs <= 0)
                 {
-                    this.Close();
                     endForm endForm = new endForm(score, tries, "Game over! You won!!!");
-                    endForm.Show();
+                    this.Hide();
+                    endForm.ShowDialog();
+                    this.Close();
                 }
             }
             else
@@ -111,9 +112,10 @@ namespace Minesweeper
                     triesTB.Text = tries.ToString();
                     if (tries <= 0)
                     {
-                        this.Close();
                         endForm endForm = new endForm(score, tries, "Game over! You lose!!");
-                        endForm.Show();
+                        this.Hide();
+                        endForm.ShowDialog();
+                        this.Close();
                     }
                 }
                 else
@@ -123,9 +125,10 @@ namespace Minesweeper
                     triesTB.Text = tries.ToString();
                     if (tries <= 0)
                     {
-                        this.Close();
                         endForm endForm = new endForm(score, tries, "Game over! You lose!!");
-                        endForm.Show();
+                        this.Hide();
+                        endForm.ShowDialog();
+                        this.Close();
                     }
                 }
             }
@@ -166,7 +169,10 @@ namespace Minesweeper
         }
         private void quitButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            homeForm homeForm = new homeForm();
+            this.Hide();
+            homeForm.ShowDialog();
+            this.Close();
         }
     }
 }
